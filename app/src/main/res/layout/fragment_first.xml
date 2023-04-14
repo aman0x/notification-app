@@ -21,16 +21,16 @@
         app:layout_constraintVertical_bias="0.265" />
 
 
-    <Button
-        android:id="@+id/notificationbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Notification InApp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.598" />
+<!--    <Button-->
+<!--        android:id="@+id/notificationbtn"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Notification InApp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.598" />-->
 
     <Button
         android:id="@+id/button_post_device_id"
@@ -39,25 +39,25 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="28dp"
         android:padding="12dp"
-        android:text="Notification"
+        android:text="@string/resgiter_device"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.756" />
+        app:layout_constraintVertical_bias="0.666" />
 
     <ProgressBar
         android:id="@+id/idLoadingPB"
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.544"
-        android:visibility="gone" />
+        app:layout_constraintVertical_bias="0.522" />
 
     <TextView
         android:id="@+id/response"

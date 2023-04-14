@@ -49,6 +49,7 @@ import java.util.Map;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.google.firebase.FirebaseApp;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -62,7 +63,7 @@ import com.google.firebase.messaging.FirebaseMessaging;
 
 
 public class MainActivity extends AppCompatActivity {
-    Button b1;
+//    Button b1;
     private RequestQueue mRequestQueue;
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
@@ -74,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        FirebaseApp.initializeApp(this);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
@@ -97,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intentBackgroundService = new Intent(this,FirebasePushNotificationClass.class);
         startService(intentBackgroundService);
 
-        b1= (Button)findViewById(R.id.notificationbtn);
+//        b1= (Button)findViewById(R.id.notificationbtn);
         EditText myEditText = findViewById(R.id.myEditText);
         if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.O)
         {
@@ -105,18 +106,18 @@ public class MainActivity extends AppCompatActivity {
             NotificationManager nm=getSystemService(NotificationManager.class);
             nm.createNotificationChannel(nc);
         }
-        b1.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("MissingPermission")
-            @Override
-            public void  onClick(View v){
-                NotificationCompat.Builder ncb =new NotificationCompat.Builder(getApplicationContext(),"01");
-                ncb.setSmallIcon(R.drawable.ic_android_black_24dp);
-                ncb.setContentTitle("Notification");
-                ncb.setContentText("Feedback is essential for you to improve the user experience.");
-                NotificationManagerCompat nmc=NotificationManagerCompat.from(MainActivity.this);
-                nmc.notify('1',ncb.build());
-            }
-        });
+//        b1.setOnClickListener(new View.OnClickListener() {
+//            @SuppressLint("MissingPermission")
+//            @Override
+//            public void  onClick(View v){
+//                NotificationCompat.Builder ncb =new NotificationCompat.Builder(getApplicationContext(),"01");
+//                ncb.setSmallIcon(R.drawable.ic_android_black_24dp);
+//                ncb.setContentTitle("Notification");
+//                ncb.setContentText("Feedback is essential for you to improve the user experience.");
+//                NotificationManagerCompat nmc=NotificationManagerCompat.from(MainActivity.this);
+//                nmc.notify('1',ncb.build());
+//            }
+//        });
 
         mRequestQueue = Volley.newRequestQueue(this);
 
@@ -273,4 +274,5 @@ public class MainActivity extends AppCompatActivity {
         } catch (Exception ignored) {
         }
     }
+
 }
